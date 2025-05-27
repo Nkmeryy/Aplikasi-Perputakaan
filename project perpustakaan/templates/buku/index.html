@@ -1,0 +1,29 @@
+{% extends 'layouts.html' %}
+
+{% block content %}
+<h2>Daftar Buku</h2>
+<form method="POST" action="/buku/tambah">
+    <input type="text" name="judul" placeholder="Judul Buku" required>
+    <select name="id_penulis">
+        {% for p in penulis %}
+            <option value="{{ p.id_penulis }}">{{ p.nama_penulis }}</option>
+        {% endfor %}
+    </select>
+    <select name="id_penerbit">
+        {% for p in penerbit %}
+            <option value="{{ p.id_penerbit  }}">{{ p.nama_penerbit }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Tambah</button>
+</form>
+<table border="1">
+    <tr><th>Judul</th><th>Penulis</th><th>Penerbit</th></tr>
+    {% for b in buku %}
+    <tr>
+        <td>{{ b.judul }}</td>
+        <td>{{ b.penulis.nama_penulis }}</td>
+        <td>{{ b.penerbit.nama_penerbit }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

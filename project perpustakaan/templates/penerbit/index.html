@@ -1,0 +1,29 @@
+{% extends 'layouts.html' %}
+
+{% block content %}
+<h2>Daftar Penerbit</h2>
+
+<form method="POST" action="/penerbit/tambah">
+    <input type="text" name="nama_penerbit" placeholder="Nama Penerbit" required>
+    <input type="text" name="alamat" placeholder="Alamat Penerbit" required>
+    <input type="number" name="kontak" placeholder="kontak Penerbit" required>
+    <button type="submit">Tambah</button>
+</form>
+
+<table border="1">
+  <tr>
+    <th>Nama Penulis</th>
+    <th>Alamat Penulis</th>
+    <th>Kontak </th>
+  </tr>
+  
+  {% for p in penerbit %}
+  <tr>
+    <td>{{ p.nama_penerbit }}</td>
+    <td>{{ p.alamat }}</td>
+    <td>{{ p.kontak }}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
+{% endblock %}

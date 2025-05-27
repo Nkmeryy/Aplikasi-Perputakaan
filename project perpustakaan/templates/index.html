@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Daftar Penulis</h2>
+<form method="POST" action="/penulis/tambah">
+    <input type="text" name="nama" placeholder="Nama Penulis" required>
+    <button type="submit">Tambah</button>
+</form>
+<ul>
+    {% for p in penulis %}
+        <li>{{ p.nama }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

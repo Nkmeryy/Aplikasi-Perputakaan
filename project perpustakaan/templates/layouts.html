@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perpustakaan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>📚 Aplikasi Perpustakaan</h1>
+    <nav>
+        <a href="/">Dashboard</a> |
+        <a href="/buku">Buku</a> |
+        <a href="/penulis">Penulis</a> |
+        <a href="/penerbit">Penerbit</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

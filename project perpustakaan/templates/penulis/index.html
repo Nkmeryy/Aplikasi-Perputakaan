@@ -1,0 +1,25 @@
+{% extends 'layouts.html' %}
+
+{% block content %}
+<h2>Daftar Penulis</h2>
+<form method="POST" action="/penulis/tambah">
+    <input type="text" name="nama_penulis" placeholder="Nama Penulis" required>
+    <input type="text" name="bio" placeholder="Bio Penulis" required>
+    <button type="submit">Tambah</button>
+</form>
+<table border="1">
+  <tr>
+    <th>Nama Penulis</th>
+    <th>Bio Profiile</th>
+  </tr>
+  
+  {% for p in penulis %}
+  <tr>
+    <td>{{ p.nama_penulis }}</td>
+    <td>{{ p.bio }}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
+
+{% endblock %}
